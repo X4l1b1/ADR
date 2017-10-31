@@ -65,6 +65,19 @@ Le but de ce laboratoire est de se familiariser avec l'utilisation du logiciel \
 
 Nous n'avons pas rencontré de vrais problèmes durant le laboratoire, à l'exception près que nous avons essayé pendant une période de faire fonctionner MoteWorks sur une machine Windows 10 avant de savoir qu'il fallait impérativement utiliser une machine tournant sous Windows 7.
 
+\section*{Manipulations}
+Après avoir installé les outils \textbf{MoteWorks} et les drivers USB. Nous vérifions que les deux nouveaux ports de communications sont bien \textit{COM3} et \textit{COM4}. \\
+
+Nous passons ensuite à la mesure de la lumière.
+
+\subsubsection*{Préparation des noeuds}
+Après compilaton de micazc, nous lançons MoteConfig, spécifions que nous voulons utiliser le COM 3 (écriture) et donnons l'identificateur 39 à notre noeud.
+
+\subsubsection{Préparation du capteur}
+Nous suivons la même procédure que précédemment à la nuance près que nous spécifions vouloir utiliser le COM 4 (communication) cette fois et que son identificateur est 0 (valeur conventionnelle).
+
+En ouvrant XSniffer, nous sélectionnons le port COM 4 et, après configuration et la mise en tension du noeud capteur, nous démarrons la réception et commençons à voir apparaitre les paquets émis par notre noeud précédemment configuré. Les résultats sont illustré dans la section suivante.
+
 \section*{Résultats}
 
 Afin de faire varier l'intensité de la lumière perçue par le capteur, nous l'avons couvert ainsi que dirigé un flash de téléphone en sa direction.
