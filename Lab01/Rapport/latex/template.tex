@@ -1,0 +1,141 @@
+\usepackage{amsmath}
+\usepackage[\lang]{babel}
+\usepackage{caption}
+\usepackage{color}
+\usepackage{enumitem}
+\usepackage{etoolbox}
+\usepackage{fancyhdr}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{tikz}
+
+\geometry{left = 1.0in,right = 1.0in,top = 1.0in,bottom = 1.0in}
+
+% Couleurs pour le code.
+\definecolor{pgreen}{rgb}{0.0, 0.5, 0.0}
+\definecolor{pred}{rgb}{0.9, 0.0, 0.0}
+
+% Police utilisée pour le code.
+\renewcommand{\ttdefault}{pcr}
+
+% Espace avant et après une 'minipage'.
+\BeforeBeginEnvironment{minipage}{\vskip 15pt}
+\AfterEndEnvironment{minipage}{\vskip 10pt}
+
+% Paramètres du paquet 'listings'.
+\lstset{
+	backgroundcolor = \color{white},
+	basicstyle = \ttfamily,
+    	breakatwhitespace = false,
+   	breaklines = true,
+    	captionpos = t,
+    	columns = fixed,
+    	commentstyle = \color{pgreen},
+    	extendedchars = true,
+    	frame = tb,
+    	frameround = none,
+    	framesep = 0pt,
+	framexleftmargin=17pt,
+ 	framexrightmargin=17pt,
+  	framexbottommargin=5pt,
+  	framextopmargin=5pt,
+    	keywordstyle = \bfseries,
+    	numbers = left,
+    	numbersep = 10pt,
+    	numberstyle = \small\ttfamily,
+    	showspaces = false,
+   	showstringspaces = false,
+   	showtabs = false,
+    	stringstyle = \color{pred},
+    	tabsize = 2,
+    	xleftmargin=19pt,
+    	% yes, lstlistings doesn't support UTF-8....
+    	literate=
+  		{á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+  		{Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+  		{à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1
+	  	{À}{{\`A}}1 {È}{{\'E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1
+  		{ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
+	  	{Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
+	  	{â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
+  		{Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
+  		{œ}{{\oe}}1 {Œ}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1
+  		{ű}{{\H{u}}}1 {Ű}{{\H{U}}}1 {ő}{{\H{o}}}1 {Ő}{{\H{O}}}1
+  		{ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {å}{{\r a}}1 {Å}{{\r A}}1
+  		{€}{{\euro}}1 {£}{{\pounds}}1 {«}{{\guillemotleft}}1
+  		{»}{{\guillemotright}}1 {ñ}{{\~n}}1 {Ñ}{{\~N}}1 {¿}{{?`}}1
+}
+
+% Define code caption style.
+\DeclareCaptionFormat{listing}{
+	\rule{
+		\dimexpr \textwidth+15pt \relax
+	}{0.4pt}
+	\par \vskip1pt \hspace*{10pt}#1#2#3
+}
+\captionsetup[lstlisting]{
+	format = listing,
+	singlelinecheck = false,
+	margin=0pt,
+	font={sf},
+	labelsep=space,
+	labelfont=bf
+}
+
+% Fait en sorte que le code ne casse pas au milieu d'un saut de page.
+\BeforeBeginEnvironment{lstlisting}{\begin{minipage}{\linewidth}}
+\AfterEndEnvironment{lstlisting}{\end{minipage}}
+
+\setitemize{itemsep=0.2em}
+
+% Police par défaut.
+\renewcommand{\familydefault}{\sfdefault}
+
+\makeatletter
+\renewcommand{\@maketitle}{
+	\newpage
+    	\null
+    
+    	\begin{tikzpicture}[remember picture,overlay]
+    	\node[anchor=north west,inner sep=1cm] at (current page.north west)
+    		{\includegraphics[width=0.45\linewidth]{latex/heigvd_logo.png}};
+    	\end{tikzpicture}
+    
+    	\vfill
+    
+    	\fontfamily{pag}
+    
+    	\begin{center}
+    		\@title
+        	\vskip 100pt
+        	{\Large \@author}
+        	\vskip 60pt
+        	{\large \@date}
+    	\end{center}
+    
+    	\vfill
+}
+\makeatother
+
+\title{
+	{\fontsize{40pt}{40pt}\selectfont \course}
+    	\vskip 1.5em
+    	{\Huge \assignment}
+}
+
+\author{
+	\begin{tabular}{ll}
+    		\students \\
+        	\\
+        	\teacher \\
+        	\assistant
+    \end{tabular}
+}
+
+% En-têtes.
+\pagestyle{fancy}
+\lhead{\course}
+\rhead{\assignment}

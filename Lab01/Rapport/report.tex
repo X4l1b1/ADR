@@ -1,0 +1,90 @@
+%%% Documentation %%%
+%
+% Pour insérer du code:
+% \begin{lstlisting}[title=\textbf{Fichier:} test.c]
+% int main(void) {
+%		return 0;
+% }
+% \end{lstlisting}
+
+\documentclass[a4paper]{article}
+
+% Report language (english | french)
+\newcommand{\lang}{french}
+
+% Course name
+\newcommand{\course}{ADR}
+
+% Assignment
+\newcommand{\assignment}{Laboratoire 01}
+
+% Students
+\newcommand{\students}{
+	Étudiants: 	& Lucas Elisei \\
+        		   			& Arthur Passuello \\
+        		   			& Ludovic Richard
+}
+
+% Professor
+\newcommand{\teacher}{
+	Professeur: & Marcos Rubinstein
+}
+
+% Assistant
+\newcommand{\assistant}{
+	Assistant:  & Mohammad Azadifar
+}
+
+\input{latex/template.tex}
+
+% Disbable paragraph indentation.
+\setlength\parindent{0pt}
+
+% Section numerotation depth.
+\setcounter{secnumdepth}{0}
+
+% Table of contents depth.
+\setcounter{tocdepth}{3}
+
+% Code language
+\lstset{language = bash}
+
+%%% Début du document.
+
+\begin{document}
+
+\maketitle
+
+\newpage
+
+\section*{Introduction}
+
+Le but de ce laboratoire est de se familiariser avec l'utilisation du logiciel \textbf{MoteWorks}. MoteWorks est une plateforme de développement des réseaux de capteurs sans fil. Dans ce laboratoire, nous utiliserons ces capteurs afin de mesurer l'intensité de la lumière.
+
+\section*{Problèmes rencontrés}
+
+Nous n'avons pas rencontré de vrais problèmes durant le laboratoire, à l'exception près que nous avons essayé pendant une période de faire fonctionner MoteWorks sur une machine Windows 10 avant de savoir qu'il fallait impérativement utiliser une machine tournant sous Windows 7.
+
+\section*{Résultats}
+
+Afin de faire varier l'intensité de la lumière perçue par le capteur, nous l'avons couvert ainsi que dirigé un flash de téléphone en sa direction.
+
+Voici les résultats obtenus :
+
+\begin{center}
+
+\begin{tabular}{ll}
+	\hline
+	\textbf{Intensité moyenne} & 878 \\
+	\textbf{Intensité maximum} & 961 at \texttt{0:02:03} (node 39) \\
+	\textbf{Intensité minimum} & 378 at \texttt{0:01:22} (node 39) \\
+	\hline
+\end{tabular}
+
+\end{center}
+
+\section*{Conclusion}
+
+Ce laboratoire nous a permis de découvrir et d'apprendre à utiliser le logiciel MoteWorks.
+
+\end{document}

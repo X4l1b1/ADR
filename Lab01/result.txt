@@ -1,0 +1,3 @@
+Mean light : 878
+Maximum light : 961 at 0:02:03 (node 39)
+Minimum light : 378 at 0:01:22 (node 39)
